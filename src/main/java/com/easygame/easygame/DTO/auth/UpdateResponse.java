@@ -19,6 +19,8 @@ public class UpdateResponse {
     private String username;
     @Schema(description = "Почта", example = "test@gmail.com")
     private String email;
+    @Schema(description = "Номер телефона")
+    private String phoneNumber;
     @Schema(description = "Статус аккаунта", example = "true")
     private Boolean enabled;
 }

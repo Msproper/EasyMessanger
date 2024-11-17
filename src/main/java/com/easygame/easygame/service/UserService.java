@@ -90,6 +90,7 @@ public class UserService {
         UpdateResponse updateResponse = UpdateResponse.builder()
                 .id(user.getId())
                 .email(user.getEmail())
+                .phoneNumber(user.getPhoneNumber())
                 .username(user.getUsername())
                 .enabled(user.isEnabled())
                 .build();

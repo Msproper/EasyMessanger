@@ -24,4 +24,9 @@ public class SignUpRequest {
     @Schema(description = "Пароль", example = "my_1secret1_password")
     @Size(min = 2, max = 255, message = "Длина пароля должна быть не более 255 символов")
     private String password;
+
+    @Schema(description = "номер телефона", example = "+79788888888")
+    @Size(min = 4, max = 20, message = "Неправильный номер телефона")
+    @NotBlank(message = "Номер телефона не может быть пустым")
+    private String phoneNumber;
 }
