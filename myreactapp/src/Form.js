@@ -118,8 +118,8 @@ const App = () => {
         if (!formData.phone) {
             newErrors.phone = 'Phone number is required.';
         }
-        if (!formData.password || formData.password.length < 8) {
-            newErrors.password = 'Пароль слишком короткий. Используйте заглавные буквы, цыфры, специальные символы';
+        if (!formData.password || formData.password.length < 5) {
+            newErrors.password = 'Пароль слишком короткий. Используйте заглавные буквы, цифры, специальные символы';
         }
         if (formData.password !== formData.confirmPassword) {
             newErrors.confirmPassword = 'Пароли не совпадают';
