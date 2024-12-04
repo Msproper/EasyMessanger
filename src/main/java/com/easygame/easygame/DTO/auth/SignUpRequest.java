@@ -29,4 +29,10 @@ public class SignUpRequest {
     @Size(min = 4, max = 20, message = "Неправильный номер телефона")
     @NotBlank(message = "Номер телефона не может быть пустым")
     private String phoneNumber;
+
+//    @Schema(description = "Имя пользователя", example = "Елена")
+//    private String name;
+//
+//    @Schema(description = "Фамилия пользователя", example = "Федько")
+//    private String surname;
 }

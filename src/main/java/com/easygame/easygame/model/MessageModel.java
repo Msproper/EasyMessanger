@@ -20,12 +20,14 @@ public class MessageModel {
     @SequenceGenerator(name = "message_id_seq", sequenceName = "message_id_seq", allocationSize = 1)
     private String id;
 
-    @ManyToOne
-    @JoinColumn(name = "chatId", nullable = false)
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "chat_id", nullable = false)
     private ChatModel chat;
 
-    @Column(name = "senderId", nullable = false)
-    private String senderId;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "user_id", nullable = false)
+    private UserModel user;
+
 
     @Column(name = "content", nullable = false)
     private String content;

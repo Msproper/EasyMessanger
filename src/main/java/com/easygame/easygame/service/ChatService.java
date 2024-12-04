@@ -38,6 +38,6 @@ public class ChatService {
     }
 
     public List<ChatModel> getChats(){
-        return userService.getCurrentUser().getChatRooms();
+        return userService.getCurrentUser().getChats();
     }
 }

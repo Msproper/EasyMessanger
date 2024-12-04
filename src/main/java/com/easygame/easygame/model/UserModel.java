@@ -9,6 +9,7 @@ import org.springframework.security.core.userdetails.UserDetails;
 
 
 import java.util.Collection;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
@@ -43,12 +44,11 @@ public class UserModel implements UserDetails {
     @Column(name = "role", nullable = false)
     private Role role;
 
-    @Column(name = "chatRooms")
-    @ManyToMany
-    @JoinTable(
-            name = "chatRooms"
-    )
-    private List<ChatModel> chatRooms;
+    @ManyToMany(mappedBy = "users")
+    private List<ChatModel> chats;
+
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<MessageModel> messageModels;
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
